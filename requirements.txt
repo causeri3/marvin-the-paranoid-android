@@ -1,0 +1,7 @@
+opencv-python==4.6.0.66
+onnxruntime-gpu==1.12.1
+openai
+fairseq
+huggingface_hub
+numpy
+cap_from_youtube
