@@ -8,8 +8,7 @@ def get_args():
                         '--model-path',
                         type=str,
                         required=False,
-                        # default=join('', '', 'files', 'models', 'yolov7.onnx'),
-                        default=join('', 'inference', '../files', 'models', 'yolov7.onnx'),
+                        default=join('', 'yolo-chat-tts', 'files', 'yolo-model', 'yolov7.onnx'),
                         help='Path to YOLO Version 7 ONNX file')
     parser.add_argument('-c',
                         '--cam-device-number',
@@ -24,8 +23,7 @@ def get_args():
     parser.add_argument('-s',
                         '--see-detection',
                         required=False,
-                        type=bool,
-                        default=True,
+                        action='store_false',
                         help='See object detection in video output')
     parser.add_argument('-i',
                         '--interval',
