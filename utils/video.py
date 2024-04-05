@@ -78,8 +78,8 @@ def draw_boxes(
         device_numbers: list,
         predict_function,
         model_session,
-        comment_interval=45,
         see_detection=True,
+        comment_interval=65,
         video_path=None,
         youtube_url=None):
 
