@@ -1,5 +1,5 @@
-from utils.yolo_utils.processing import preprocess, postprocess
 from utils.yolo_utils.payloads import json_payload, image_payload
+from utils.yolo_utils.object_detection import ObjectDetector
 
 import onnxruntime as nxrun
 import numpy as np
@@ -53,19 +53,9 @@ def predict(image,
         The converted image has shape: {}
         """.format(image.shape))
 
-    dimensions = session.get_inputs()[0].shape
-    input_image_buffer = preprocess(image, [dimensions[2], dimensions[3]])
-    input_image_buffer = np.expand_dims(input_image_buffer, axis=0)
-
     logging.debug("Invoking inference with provider setting: {}".format(session._providers))
-    input_name = session.get_inputs()[0].name
-    results = session.run(None, {input_name: input_image_buffer})
 
-    boxes = results[0][:, 1:5]
-    scores = results[0][:, 6]
-    classes = results[0][:, 5]
-    detected_objects = postprocess(boxes, scores, classes, image.shape[1],
-                                   image.shape[0], [dimensions[2], dimensions[3]])
+    detected_objects = ObjectDetector(image, session).detect()
 
     logging.debug("Detected {} objects".format(len(detected_objects)))
 
