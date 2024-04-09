@@ -1,10 +1,14 @@
 from utils.yolo_utils.predict import predict, load_model
 from utils import video
-import logging
 from utils.args import get_args
+from utils.yolo_utils.get_yolov8 import get_model
+
+import logging
 
 
 args, unknown = get_args()
+
+model_path = get_model()
 
 computing_providers = ['CUDAExecutionProvider']
 
@@ -24,7 +28,7 @@ elif args.video_path:
 else:
     available_devices = video.return_camera_indexes()
 
-session_gpu = load_model(args.model_path, providers=computing_providers)
+session_gpu = load_model(model_path, providers=computing_providers)
 
 if __name__ == "__main__":
     video.draw_boxes(
