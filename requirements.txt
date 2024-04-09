@@ -10,3 +10,5 @@ sounddevice==0.4.6
 openai==0.28
 g2p-en==2.1.0
 cap-from-youtube==0.0.10
+ultralytics==8.1.42
+onnx==1.16.0
