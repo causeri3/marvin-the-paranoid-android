@@ -8,9 +8,9 @@ def get_args():
                         '--model-path',
                         type=str,
                         required=False,
-                        default=join('', 'yolo-chat-tts', 'files', 'yolo-model', 'yolov7.onnx'),
-                        help='Path to YOLO Version 7 ONNX file')
-    parser.add_argument('-c',
+                        default=join('', 'files', 'yolo-model'),
+                        help='Path to YOLO Version 8 ONNX file')
+    parser.add_argument('-cam',
                         '--cam-device-number',
                         required=False,
                         default=None,
@@ -41,6 +41,22 @@ def get_args():
                         required=False,
                         default=None,
                         help='String containing url to youtube video')
+    parser.add_argument('-ms',
+                        '--model-size',
+                        required=False,
+                        default='small',
+                        help="""String containing 'medium' or 'large', the small model being  default""")
+    parser.add_argument('-c',
+                        '--confidence-threshold',
+                        required=False,
+                        default=0.25,
+                        help="""Confidence threshold for detected object""")
+    parser.add_argument('-iou',
+                        '--iou-threshold',
+                        required=False,
+                        default=0.25,
+                        help="""Threshold for Intersection over Union (IoU)""")
+
 
     # to not get into trouble with uvicorn args
     args = parser.parse_known_args()
