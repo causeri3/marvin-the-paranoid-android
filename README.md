@@ -5,6 +5,8 @@ From Video input to audio output.
 Via object detection - (yolov8, onnx format), LLM - (chatGPT, via API) and text-to-speech (fastspeech2-en-ljspeech).
 One can use webcam, movie files or youtube videos as input. Compatible with Mac and Windows and properly Linux.
 
+https://github.com/causeri3/marvin-the-paranoid-android/assets/67895591/5ffb696e-d7bc-430a-ae05-066325d817ec 
+
 ## Dependencies
 ### Python
 
@@ -44,4 +46,6 @@ You can
 * choose the model size
 
 ---
+
+
 Thanks [Tien Luong Ngoc](https://github.com/tienluongngoc/yolov5_triton_inference_server/tree/main/clients/yolov5) & [Ibai Gorordo](https://github.com/ibaiGorordo/ONNX-YOLOv8-Object-Detection), I took a bunch of useful code from your linked repositories
