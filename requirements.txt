@@ -1,10 +1,8 @@
-python==3.9
-
 opencv-python==4.9.0.80
 onnxruntime==1.17.1
 fairseq==0.12.2
 huggingface-hub==0.22.2
-numpy==-1.26.4
+numpy==1.26.4
 tensorboardX==2.6.2.2
 sounddevice==0.4.6
 openai==0.28
@@ -12,3 +10,4 @@ g2p-en==2.1.0
 cap-from-youtube==0.0.10
 ultralytics==8.1.42
 onnx==1.16.0
+setuptools==78.1.0

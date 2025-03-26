@@ -25,14 +25,21 @@ If you can leverage your GPU by having all CUDA dependencies installed, you can 
 
 ### Python packages 
 You can install them via
+
 `pip install -r requirements.txt`
+
+or even better if you use uv:
+```sh
+uv venv --python 3.9 
+uv pip install -r requirements.txt
+```
 
 
 ## Usage
 You need an OpenAI Token to get it running
-* webcam: `python yolo-chat-tts/main.py -ok <your key>`
-* local video: `python yolo-chat-tts/main.py -ok <your key> -vp "path/to/your/video.mov"`
-* youtube: `python yolo-chat-tts/main.py -ok <your key> -y "https://www.youtube.com/watch?v=uhkdUdXTUuc"`
+* webcam: `python main.py -ok <your key>`
+* local video: `python main.py -ok <your key> -vp "path/to/your/video.mov"`
+* youtube: `python main.py -ok <your key> -y "https://www.youtube.com/watch?v=uhkdUdXTUuc"`
 
 ## Args
 See all arguments : `python yolo-chat-tts/main.py --help`
