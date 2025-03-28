@@ -2,6 +2,8 @@ import numpy as np
 import cv2
 
 _LINE_THICKNESS_SCALING = 500.0
+_TEXT_THICKNESS_SCALING = 700.0
+_TEXT_SCALING = 520.0
 
 np.random.seed(0)
 RAND_COLORS = np.random.randint(50, 255, (64, 3), "int")  # used for class visu
@@ -32,29 +34,6 @@ def render_box(img, box, color=(200, 200, 200)):
         thickness=thickness
     )
     return img
-
-
-def render_filled_box(img, box, color=(200, 200, 200)):
-    """
-    Render a box. Calculates scaling and thickness automatically.
-    :param img: image to render into
-    :param box: (x1, y1, x2, y2) - box coordinates
-    :param color: (b, g, r) - box color
-    :return: updated image
-    """
-    x1, y1, x2, y2 = box
-    img = cv2.rectangle(
-        img,
-        (int(x1), int(y1)),
-        (int(x2), int(y2)),
-        color,
-        thickness=cv2.FILLED
-    )
-    return img
-
-
-_TEXT_THICKNESS_SCALING = 700.0
-_TEXT_SCALING = 520.0
 
 
 def get_text_size(img, text, normalised_scaling=1.0):

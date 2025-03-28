@@ -1,5 +1,5 @@
 from utils.yolo_utils.labels import COCOLabels
-from utils.yolo_utils.render import render_box, render_filled_box, get_text_size, render_text, RAND_COLORS
+from utils.yolo_utils.render import render_box, render_text, RAND_COLORS
 
 import logging
 import cv2
@@ -69,10 +69,6 @@ def image_payload(detected_objects, image):
         log_list.append(confidence)
 
         output_image = render_box(output_image, box.box(), color=tuple(RAND_COLORS[box.class_id % 64].tolist()))
-        size = get_text_size(output_image, tag_text,
-                             normalised_scaling=0.6)
-        output_image = render_filled_box(output_image, (box.x1 - 3, box.y1 - 3, box.x1 + size[0], box.y1 + size[1]),
-                                         color=(220, 220, 220))
         output_image = render_text(output_image, tag_text,
                                    (box.x1, box.y1), color=(30, 30, 30), normalised_scaling=0.5)
 
