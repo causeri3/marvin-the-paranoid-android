@@ -50,11 +50,13 @@ def get_args():
                         '--confidence-threshold',
                         required=False,
                         default=0.25,
+                        type=float,
                         help="""Confidence threshold for detected object""")
     parser.add_argument('-iou',
                         '--iou-threshold',
                         required=False,
                         default=0.05,
+                        type=float,
                         help="""Threshold for Intersection over Union (IoU)""")
 
 
