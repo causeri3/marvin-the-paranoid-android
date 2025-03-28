@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
+from utils.args import get_args
 
+args, unknown = get_args()
 
 class BoundingBox:
     def __init__(self, class_id, confidence, x1, x2, y1, y2):
@@ -19,8 +21,8 @@ class ObjectDetector:
     def __init__(self,
                  image,
                  session,
-                 iou_threshold=0.05,
-                 confidence_threshold=0.25):
+                 iou_threshold=args.iou_threshold,
+                 confidence_threshold=args.confidence_threshold):
 
         self.img = image
         self.image_shape = image.shape
