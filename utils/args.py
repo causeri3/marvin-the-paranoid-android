@@ -54,7 +54,7 @@ def get_args():
     parser.add_argument('-iou',
                         '--iou-threshold',
                         required=False,
-                        default=0.25,
+                        default=0.05,
                         help="""Threshold for Intersection over Union (IoU)""")
 
 
